@@ -1,0 +1,87 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+
+  <main id="main">
+    <section id="contact" class="contact mb-5">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-12 text-center mb-5">
+            <h1 class="page-title">Contact us</h1>
+          </div>
+        </div>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8072641008803!2d37.70580027576977!3d0.13488539986379106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17883c967d5c1517%3A0x94e1dbf4dfea47bd!2sMeru%20University%20of%20Science%20and%20Technology!5e0!3m2!1sen!2ske!4v1713608667713!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+        <div class="row gy-4">
+
+          <div class="col-md-4">
+            <div class="info-item">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Address</h3>
+              <address>A108 Adam Street, NY 535022, USA</address>
+            </div>
+          </div><!-- End Info Item -->
+          
+
+          <div class="col-md-4">
+            <div class="info-item info-item-borders">
+              <i class="bi bi-phone"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-4">
+            <div class="info-item">
+              <i class="bi bi-envelope"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:info@example.com">info@example.com</a></p>
+            </div>
+          </div><!-- End Info Item -->
+
+        </div>
+
+        <div class="form mt-5">
+          <form method="post" action="{% url 'contact-url' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name</label>
+
+                <input type="text" name="name" class="form-control mb-30" placeholder="Enter your Name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="text" name="email" class="form-control mb-30" placeholder="Enter Your Email">
+
+            </div>
+
+            <!--<div class="form-group">
+                <label for="password">Subject</label>
+                <input type="text" name="subject" class="form-control mb-30" placeholder="Subject">
+
+            </div>-->
+            <div class="form-group">
+                <label for="password">Message</label>
+                <input type="text" name="message" class="form-control mb-30"
+                       placeholder="Write Your Message Here">
+
+            </div><br>
+            <div class="col-send" style="text-align: center;">
+                <button type="submit" class="btn btn-success" style="background-color: #cda45e">Send
+                    Message
+                </button>
+            </div>
+        </form>
+        </div><!-- End Contact Form -->
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+
+{% endblock %}
+

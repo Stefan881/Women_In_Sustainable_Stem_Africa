@@ -1,0 +1,17 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+
+
+<div>
+    <h4>Our Newsletter</h4>
+    <p>Subscribe to our Weekly newsletters to receive updates about some of our discounted grocery
+        boxes</p>
+    <form action="#" method="POST">
+        {% csrf_token %}
+        <input type="email" name="email"><input type="submit" value="Subscribe">
+    </form>
+
+</div>
+
+{% endblock %}
