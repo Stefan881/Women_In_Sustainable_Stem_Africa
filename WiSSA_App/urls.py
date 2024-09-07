@@ -8,7 +8,7 @@ urlpatterns = [
     path('contact',views.contact,name='contact-url'),
     path('news',views.news,name='news-url'),
     path('support_us',views.support_us,name='support_us-url'),
-    path('newsletter_subscription',views.newsletter_subscription,name='newsletter_subscription_url'),
+    path('newsletter_subscription',views.subscribe,name='newsletter_subscription_url'),
     path('newsletters',views.newsletter,name='newsletter-url'),
 ]
 

@@ -14,6 +14,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.sites.shortcuts import get_current_site
 from . decorators import user_not_authenticated
 from . decorators import user_is_superuser
+from django.contrib.auth import get_user_model
 # Create your views here.
 
 def index(request):
@@ -61,7 +62,7 @@ def newsletter(request):
             receivers_list = [receiver.strip() for receiver in receivers.split(',')]
 
             mail = EmailMessage(subject, message, f"WiSSAfrica Org   <{request.user.email}>", bcc=receivers_list)
-            #mail.content_subtype = 'html'
+            mail.content_subtype = 'html'
             if mail.send():
                 messages.success(request, "Email sent successfully")
             else:
